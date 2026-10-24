@@ -18,7 +18,6 @@ import matplotlib.pyplot as plt
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 RAW_DIR = PROJECT_ROOT / "data" / "raw"
 OUTPUT_DIR = PROJECT_ROOT / "outputs"
-SCREENSHOT_DIR = PROJECT_ROOT / "screenshots"
 
 INPUTS = {
     "wind": RAW_DIR / "era5_wind_20241010_20241014.nc",
@@ -95,9 +94,8 @@ def inspect_file(group: str, path: Path) -> list[dict]:
 
 
 def write_audit_figure(frame: pd.DataFrame) -> Path:
-    """Save a compact visual record for the STEP 2 evidence folder."""
-    SCREENSHOT_DIR.mkdir(parents=True, exist_ok=True)
-    figure_path = SCREENSHOT_DIR / "2_1_data_audit.png"
+    """Save a compact generated result; this is not a terminal screenshot."""
+    figure_path = OUTPUT_DIR / "data_audit_table.png"
     display = frame[
         [
             "group",
