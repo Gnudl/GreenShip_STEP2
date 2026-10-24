@@ -1,0 +1,73 @@
+scenario_id: haiphong_caimep_20241010_v1
+status: model_trial
+decision_date: "2026-10-24"
+
+crs:
+  name: WGS84
+  epsg: 4326
+  python_coordinate_order: [latitude, longitude]
+  geojson_coordinate_order: [longitude, latitude]
+
+main_route:
+  name: Hai Phong to Cai Mep-Thi Vai
+  origin:
+    name: Hai Phong approach point
+    latitude: 20.6667
+    longitude: 106.8333
+    coordinate_status: model_assumption_pending_land_mask_check
+  destination:
+    name: Cai Mep-Thi Vai approach point
+    latitude: 10.4200
+    longitude: 107.0800
+    coordinate_status: model_assumption_pending_land_mask_check
+  intermediate_waypoint_count: 2
+
+debug_mini_case:
+  name: Open-sea north-south segment
+  start:
+    latitude: 15.0000
+    longitude: 110.2000
+  end:
+    latitude: 13.5000
+    longitude: 110.2000
+  purpose: Test distance, sampling, weather lookup, and reproducibility before the main route.
+
+departure_utc: "2024-10-10T00:00:00Z"
+expected_max_duration_h: 72
+
+data_contract:
+  bounding_box:
+    north: 22.0
+    west: 105.0
+    south: 9.0
+    east: 111.0
+  coverage:
+    wind_start_utc: "2024-10-10T00:00:00Z"
+    wind_end_utc: "2024-10-14T23:00:00Z"
+    wave_start_utc: "2024-10-10T00:00:00Z"
+    wave_end_utc: "2024-10-14T23:00:00Z"
+    current_start_utc: "2024-10-10T00:00:00Z"
+    current_end_utc: "2024-10-14T00:00:00Z"
+  required_variables:
+    wind: [u10, v10]
+    waves: [swh]
+  optional_variables:
+    currents: [uo, vo]
+  required_units:
+    u10: "m s-1"
+    v10: "m s-1"
+    swh: m
+    uo: "m s-1"
+    vo: "m s-1"
+  missing_value_policy: Return invalid data with a diagnostic; never replace missing weather with zero.
+
+route_sampling:
+  maximum_spacing_nm: 5.0
+  distance_method: WGS84 geodesic
+
+scope_notes:
+  - This scenario is for research simulation and is not suitable for navigation.
+  - Port approach coordinates are explicit model assumptions and must be checked against the land mask before route evaluation.
+  - Currents are daily means and optional; wind and waves are hourly and mandatory.
+  - A route is invalid if its estimated timestamps exceed the coverage of a mandatory dataset.
+
