@@ -8,7 +8,6 @@ intersection code should use a tested geometry library.
 from __future__ import annotations
 
 import json
-import shutil
 import struct
 from pathlib import Path
 
@@ -20,7 +19,6 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 SHAPEFILE = PROJECT_ROOT / "data" / "land" / "ne_10m_land" / "ne_10m_land.shp"
 SCENARIO_FILE = PROJECT_ROOT / "config" / "scenario.yaml"
 MAP_DIR = PROJECT_ROOT / "outputs" / "maps"
-SCREENSHOT_DIR = PROJECT_ROOT / "screenshots"
 
 
 def read_polygon_rings(path: Path) -> list[list[tuple[float, float]]]:
@@ -124,7 +122,6 @@ def main() -> None:
     ]
 
     MAP_DIR.mkdir(parents=True, exist_ok=True)
-    SCREENSHOT_DIR.mkdir(parents=True, exist_ok=True)
     output = {
         "shapefile": str(SHAPEFILE.relative_to(PROJECT_ROOT)).replace("\\", "/"),
         "crs": "WGS84 / EPSG:4326",
@@ -181,7 +178,6 @@ def main() -> None:
     map_path = MAP_DIR / "map_domain.png"
     fig.savefig(map_path, dpi=180, bbox_inches="tight")
     plt.close(fig)
-    shutil.copyfile(map_path, SCREENSHOT_DIR / "2_1_land_domain.png")
 
     print(json.dumps(output, indent=2, ensure_ascii=False))
     print(f"Wrote {check_path}")
