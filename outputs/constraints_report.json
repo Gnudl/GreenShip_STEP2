@@ -1,0 +1,94 @@
+{
+  "constraint_policy": {
+    "land_crossing": "hard",
+    "mandatory_weather_invalid": "hard",
+    "near_zero_segment": "hard",
+    "wave_height_exceeded": "soft",
+    "excessive_detour": "soft"
+  },
+  "thresholds": {
+    "near_zero_segment_nm": 0.01,
+    "wave": {
+      "classification": "soft",
+      "swh_threshold_m": 2.0,
+      "threshold_status": "group_assumption_for_step2_demo"
+    },
+    "detour": {
+      "classification": "soft",
+      "reference_route_id": "R01",
+      "ratio_threshold": 1.05,
+      "penalty_weight": 1.0
+    }
+  },
+  "weather_note": "Báo cáo này mới kiểm tra hình học và đường vòng; thời tiết sẽ được kiểm tra khi evaluator truyền các mẫu weather_at().",
+  "routes": [
+    {
+      "route_id": "R01",
+      "reference_route_id": "R01",
+      "feasible": true,
+      "weather_checked": false,
+      "violations": {
+        "hard": [],
+        "soft": []
+      },
+      "hard_violation_count": 0,
+      "soft_violation_count": 0,
+      "total_normalized_violation": 0
+    },
+    {
+      "route_id": "R02",
+      "reference_route_id": "R01",
+      "feasible": false,
+      "weather_checked": false,
+      "violations": {
+        "hard": [
+          {
+            "code": "LAND_CROSSING",
+            "classification": "hard",
+            "message": "Tuyến cắt polygon đất liền và không khả thi.",
+            "details": {
+              "segment_indices": [
+                1,
+                2,
+                3,
+                4
+              ]
+            },
+            "normalized_severity": 1.0
+          }
+        ],
+        "soft": []
+      },
+      "hard_violation_count": 1,
+      "soft_violation_count": 0,
+      "total_normalized_violation": 1.0
+    },
+    {
+      "route_id": "R03",
+      "reference_route_id": "R01",
+      "feasible": true,
+      "weather_checked": false,
+      "violations": {
+        "hard": [],
+        "soft": [
+          {
+            "code": "EXCESSIVE_DETOUR",
+            "classification": "soft",
+            "message": "Tuyến dài hơn ngưỡng so với tuyến tham chiếu khả thi.",
+            "details": {
+              "distance_nm": 822.731387,
+              "reference_distance_nm": 779.602436,
+              "distance_ratio": 1.055322,
+              "ratio_threshold": 1.05,
+              "penalty_weight": 1.0
+            },
+            "normalized_severity": 0.005322
+          }
+        ]
+      },
+      "hard_violation_count": 0,
+      "soft_violation_count": 1,
+      "total_normalized_violation": 0.005322
+    }
+  ]
+}

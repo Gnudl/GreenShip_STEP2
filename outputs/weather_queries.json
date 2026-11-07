@@ -1,0 +1,156 @@
+[
+  {
+    "id": "Q01",
+    "wave_hs_m": 1.291952133178711,
+    "wind_u_mps": -1.340728759765625,
+    "wind_v_mps": -7.1899871826171875,
+    "current_u_mps": -0.24414807558059692,
+    "current_v_mps": -0.34730064868927,
+    "valid": true,
+    "note": "ok",
+    "query": {
+      "latitude": 15.0,
+      "longitude": 110.2,
+      "time_utc": "2024-10-10T12:00:00Z"
+    },
+    "source": {
+      "wind": {
+        "latitude": 15.0,
+        "longitude": 110.25,
+        "time_utc": "2024-10-10T12:00:00Z",
+        "selection_method": "nearest_grid_cell",
+        "distance_from_query_nm": 2.899732
+      },
+      "waves": {
+        "latitude": 15.0,
+        "longitude": 110.0,
+        "time_utc": "2024-10-10T12:00:00Z",
+        "selection_method": "nearest_grid_cell",
+        "distance_from_query_nm": 11.598926
+      },
+      "currents": {
+        "latitude": 15.0,
+        "longitude": 110.16667938232422,
+        "time_utc": "2024-10-11T00:00:00Z",
+        "selection_method": "nearest_grid_cell",
+        "distance_from_query_nm": 1.932417
+      }
+    }
+  },
+  {
+    "id": "Q02",
+    "wave_hs_m": 1.236159086227417,
+    "wind_u_mps": -3.140472412109375,
+    "wind_v_mps": -5.688568115234375,
+    "current_u_mps": 0.07202368229627609,
+    "current_v_mps": -0.365001380443573,
+    "valid": true,
+    "note": "ok",
+    "query": {
+      "latitude": 13.5,
+      "longitude": 110.2,
+      "time_utc": "2024-10-12T06:00:00Z"
+    },
+    "source": {
+      "wind": {
+        "latitude": 13.5,
+        "longitude": 110.25,
+        "time_utc": "2024-10-12T06:00:00Z",
+        "selection_method": "nearest_grid_cell",
+        "distance_from_query_nm": 2.919077
+      },
+      "waves": {
+        "latitude": 13.5,
+        "longitude": 110.0,
+        "time_utc": "2024-10-12T06:00:00Z",
+        "selection_method": "nearest_grid_cell",
+        "distance_from_query_nm": 11.676307
+      },
+      "currents": {
+        "latitude": 13.5,
+        "longitude": 110.16667938232422,
+        "time_utc": "2024-10-12T00:00:00Z",
+        "selection_method": "nearest_grid_cell",
+        "distance_from_query_nm": 1.945309
+      }
+    }
+  },
+  {
+    "id": "Q03",
+    "wave_hs_m": 0.32881981134414673,
+    "wind_u_mps": 0.02374267578125,
+    "wind_v_mps": 0.0631103515625,
+    "current_u_mps": 0.021973326802253723,
+    "current_v_mps": -0.051881466060876846,
+    "valid": true,
+    "note": "ok",
+    "query": {
+      "latitude": 18.5,
+      "longitude": 108.5,
+      "time_utc": "2024-10-14T00:00:00Z"
+    },
+    "source": {
+      "wind": {
+        "latitude": 18.5,
+        "longitude": 108.5,
+        "time_utc": "2024-10-14T00:00:00Z",
+        "selection_method": "nearest_grid_cell",
+        "distance_from_query_nm": 0.0
+      },
+      "waves": {
+        "latitude": 18.5,
+        "longitude": 108.5,
+        "time_utc": "2024-10-14T00:00:00Z",
+        "selection_method": "nearest_grid_cell",
+        "distance_from_query_nm": 0.0
+      },
+      "currents": {
+        "latitude": 18.5,
+        "longitude": 108.50001525878906,
+        "time_utc": "2024-10-14T00:00:00Z",
+        "selection_method": "nearest_grid_cell",
+        "distance_from_query_nm": 0.000869
+      }
+    }
+  },
+  {
+    "id": "Q04_OUTSIDE_SPACE",
+    "wave_hs_m": null,
+    "wind_u_mps": null,
+    "wind_v_mps": null,
+    "current_u_mps": null,
+    "current_v_mps": null,
+    "valid": false,
+    "note": "wind:latitude_out_of_range; wind:longitude_out_of_range; waves:latitude_out_of_range; waves:longitude_out_of_range; currents_optional:latitude_out_of_range; currents_optional:longitude_out_of_range",
+    "query": {
+      "latitude": 25.0,
+      "longitude": 115.0,
+      "time_utc": "2024-10-12T00:00:00Z"
+    },
+    "source": {
+      "wind": null,
+      "waves": null,
+      "currents": null
+    }
+  },
+  {
+    "id": "Q05_OUTSIDE_TIME",
+    "wave_hs_m": null,
+    "wind_u_mps": null,
+    "wind_v_mps": null,
+    "current_u_mps": null,
+    "current_v_mps": null,
+    "valid": false,
+    "note": "wind:time_out_of_range; waves:time_out_of_range; currents_optional:time_out_of_range",
+    "query": {
+      "latitude": 15.0,
+      "longitude": 110.2,
+      "time_utc": "2024-10-20T00:00:00Z"
+    },
+    "source": {
+      "wind": null,
+      "waves": null,
+      "currents": null
+    }
+  }
+]

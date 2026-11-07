@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0",
+  "scenario_id": "haiphong_caimep_20241010_v1",
+  "coordinate_reference_system": "WGS84 / EPSG:4326",
+  "coordinate_order": [
+    "longitude",
+    "latitude"
+  ],
+  "status": "manual_research_routes",
+  "usage_note": "Research simulation only; not suitable for operational navigation.",
+  "routes": [
+    {
+      "route_id": "R01",
+      "name": "Coastal baseline candidate",
+      "purpose": "Manual baseline candidate following the Vietnamese coast at an offshore distance.",
+      "assumption": "Waypoints are modelling assumptions and are not official shipping-lane coordinates.",
+      "waypoints": [
+        [106.8333, 20.6667],
+        [107.5000, 20.2000],
+        [108.3000, 17.5000],
+        [109.5000, 15.0000],
+        [109.8000, 12.0000],
+        [107.8000, 10.2000],
+        [107.2000, 10.2000],
+        [107.0400, 10.2800],
+        [106.9700, 10.3400],
+        [106.9800, 10.3900],
+        [107.0800, 10.4200]
+      ]
+    },
+    {
+      "route_id": "R02",
+      "name": "Deliberate land-crossing test",
+      "purpose": "Negative-control route intentionally crossing mainland Vietnam to test the land constraint.",
+      "assumption": "This route is deliberately invalid and must be rejected by the evaluator.",
+      "waypoints": [
+        [106.8333, 20.6667],
+        [105.8000, 18.5000],
+        [106.0000, 16.0000],
+        [106.5000, 13.0000],
+        [107.0800, 10.4200]
+      ]
+    },
+    {
+      "route_id": "R03",
+      "name": "Offshore alternative candidate",
+      "purpose": "Alternative manual candidate located farther offshore for later weather comparison.",
+      "assumption": "Waypoints are modelling assumptions and are not official shipping-lane coordinates.",
+      "waypoints": [
+        [106.8333, 20.6667],
+        [107.8000, 20.0000],
+        [109.3000, 17.0000],
+        [110.5000, 14.0000],
+        [110.0000, 11.5000],
+        [107.8000, 10.2000],
+        [107.2000, 10.2000],
+        [107.0400, 10.2800],
+        [106.9700, 10.3400],
+        [106.9800, 10.3900],
+        [107.0800, 10.4200]
+      ]
+    }
+  ]
+}

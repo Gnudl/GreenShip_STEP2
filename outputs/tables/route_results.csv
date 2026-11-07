@@ -1,0 +1,4 @@
+﻿route_id,route_name,distance_nm,duration_h,estimated_fuel_t,estimated_co2_t,feasible,hard_violation_count,soft_violation_count,violation_codes,fitness,result_note
+R01,Coastal baseline candidate,779.602436,62.688977,59.554528,185.4528,True,0,0,Không,59.554528,Tuyến thử khả thi; chưa phải tuyến tối ưu.
+R02,Deliberate land-crossing test,631.374883,52.371921,49.753325,154.931853,False,91,0,LAND_CROSSING; MANDATORY_WEATHER_INVALID,,Tuyến thử không khả thi; không dùng để so sánh lợi ích.
+R03,Offshore alternative candidate,822.731387,68.036151,64.634344,201.271346,True,0,1,EXCESSIVE_DETOUR,64.634344,Tuyến thử khả thi; chưa phải tuyến tối ưu.

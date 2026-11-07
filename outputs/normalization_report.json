@@ -1,0 +1,86 @@
+[
+  {
+    "dataset": "wind",
+    "input": "data/raw/era5_wind_20241010_20241014.nc",
+    "output": "data/processed/wind.nc",
+    "sizes": {
+      "time": 120,
+      "latitude": 53,
+      "longitude": 25
+    },
+    "time_start_utc": "2024-10-10T00:00:00Z",
+    "time_end_utc": "2024-10-14T23:00:00Z",
+    "latitude_min": 9.0,
+    "latitude_max": 22.0,
+    "longitude_min": 105.0,
+    "longitude_max": 111.0,
+    "variables": {
+      "u10": {
+        "unit": "m s-1",
+        "minimum": -8.800933837890625,
+        "maximum": 4.35565185546875,
+        "missing_percent": 0.0
+      },
+      "v10": {
+        "unit": "m s-1",
+        "minimum": -10.31793212890625,
+        "maximum": 6.2705078125,
+        "missing_percent": 0.0
+      }
+    }
+  },
+  {
+    "dataset": "waves",
+    "input": "data/raw/era5_waves_20241010_20241014.nc",
+    "output": "data/processed/waves.nc",
+    "sizes": {
+      "time": 120,
+      "latitude": 27,
+      "longitude": 13
+    },
+    "time_start_utc": "2024-10-10T00:00:00Z",
+    "time_end_utc": "2024-10-14T23:00:00Z",
+    "latitude_min": 9.0,
+    "latitude_max": 22.0,
+    "longitude_min": 105.0,
+    "longitude_max": 111.0,
+    "variables": {
+      "swh": {
+        "unit": "m",
+        "minimum": 0.05280466377735138,
+        "maximum": 1.9583021402359009,
+        "missing_percent": 49.002849
+      }
+    }
+  },
+  {
+    "dataset": "currents",
+    "input": "data/raw/cmems_currents_daily_20241010_20241014_surface.nc",
+    "output": "data/processed/currents.nc",
+    "sizes": {
+      "time": 5,
+      "latitude": 157,
+      "longitude": 72
+    },
+    "time_start_utc": "2024-10-10T00:00:00Z",
+    "time_end_utc": "2024-10-14T00:00:00Z",
+    "latitude_min": 9.0,
+    "latitude_max": 22.0,
+    "longitude_min": 105.00001525878906,
+    "longitude_max": 110.91667938232422,
+    "variables": {
+      "uo": {
+        "unit": "m s-1",
+        "minimum": -0.7611316442489624,
+        "maximum": 0.5352946519851685,
+        "missing_percent": 50.460014
+      },
+      "vo": {
+        "unit": "m s-1",
+        "minimum": -1.1334574222564697,
+        "maximum": 0.82644122838974,
+        "missing_percent": 50.460014
+      }
+    }
+  }
+]

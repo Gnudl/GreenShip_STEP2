@@ -1,0 +1,57 @@
+{
+  "coordinate_order": [
+    "longitude",
+    "latitude"
+  ],
+  "distance_method": "Vincenty inverse on WGS84 ellipsoid",
+  "distance_unit": "nautical_mile",
+  "maximum_spacing_nm": 5.0,
+  "land_source": "Natural Earth Land 1:10m version 5.1.1",
+  "usage_note": "Chỉ dùng để sàng lọc nghiên cứu; không phù hợp cho dẫn đường.",
+  "routes": [
+    {
+      "route_id": "R01",
+      "name": "Coastal baseline candidate",
+      "waypoint_count": 11,
+      "segment_count": 10,
+      "distance_nm": 779.602436,
+      "sample_count": 163,
+      "maximum_sample_gap_nm": 4.990145,
+      "spacing_limit_nm": 5.0,
+      "spacing_valid": true,
+      "crosses_land": false,
+      "land_violating_segments": []
+    },
+    {
+      "route_id": "R02",
+      "name": "Deliberate land-crossing test",
+      "waypoint_count": 5,
+      "segment_count": 4,
+      "distance_nm": 631.374883,
+      "sample_count": 129,
+      "maximum_sample_gap_nm": 4.995147,
+      "spacing_limit_nm": 5.0,
+      "spacing_valid": true,
+      "crosses_land": true,
+      "land_violating_segments": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "route_id": "R03",
+      "name": "Offshore alternative candidate",
+      "waypoint_count": 11,
+      "segment_count": 10,
+      "distance_nm": 822.731387,
+      "sample_count": 172,
+      "maximum_sample_gap_nm": 4.966976,
+      "spacing_limit_nm": 5.0,
+      "spacing_valid": true,
+      "crosses_land": false,
+      "land_violating_segments": []
+    }
+  ]
+}

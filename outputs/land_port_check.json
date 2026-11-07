@@ -1,0 +1,32 @@
+{
+  "shapefile": "data/land/ne_10m_land/ne_10m_land.shp",
+  "crs": "WGS84 / EPSG:4326",
+  "polygon_ring_count": 6838,
+  "endpoints": {
+    "origin": {
+      "name": "Hai Phong approach point",
+      "latitude": 20.6667,
+      "longitude": 106.8333,
+      "natural_earth_land": false
+    },
+    "destination": {
+      "name": "Cai Mep-Thi Vai approach point",
+      "latitude": 10.42,
+      "longitude": 107.08,
+      "natural_earth_land": false
+    }
+  },
+  "mini_case": [
+    {
+      "latitude": 15.0,
+      "longitude": 110.2,
+      "natural_earth_land": false
+    },
+    {
+      "latitude": 13.5,
+      "longitude": 110.2,
+      "natural_earth_land": false
+    }
+  ],
+  "note": "Natural Earth is suitable for research screening, not operational navigation."
+}

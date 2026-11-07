@@ -60,14 +60,29 @@ data_contract:
     uo: "m s-1"
     vo: "m s-1"
   missing_value_policy: Return invalid data with a diagnostic; never replace missing weather with zero.
+  spatial_lookup_policy:
+    waves: Nearest valid sea cell up to 30 nautical miles; otherwise return invalid.
+    rationale: ERA5 wave grid is 0.5 degree and coastal nearest cells may be land-masked.
+    traceability: Record selection_method, source coordinates, and distance_from_query_nm.
 
 route_sampling:
   maximum_spacing_nm: 5.0
   distance_method: WGS84 geodesic
+
+constraints:
+  near_zero_segment_nm: 0.01
+  wave:
+    classification: soft
+    swh_threshold_m: 2.0
+    threshold_status: group_assumption_for_step2_demo
+  detour:
+    classification: soft
+    reference_route_id: R01
+    ratio_threshold: 1.05
+    penalty_weight: 1.0
 
 scope_notes:
   - This scenario is for research simulation and is not suitable for navigation.
   - Port approach coordinates are explicit model assumptions and must be checked against the land mask before route evaluation.
   - Currents are daily means and optional; wind and waves are hourly and mandatory.
   - A route is invalid if its estimated timestamps exceed the coverage of a mandatory dataset.
-

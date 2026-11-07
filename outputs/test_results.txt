@@ -1,0 +1,4 @@
+Kiểm thử bản chuẩn bị upload ngày 07/11/2026.
+Lệnh: python -B -m pytest -q -p no:cacheprovider temp/greenship_upload_20261107/tests
+.................................                                        [100%]
+33 passed in 85.89s (0:01:25)

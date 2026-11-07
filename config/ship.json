@@ -1,0 +1,54 @@
+{
+  "ship_id": "handysize_40000dwt_toy_v1",
+  "name": "Handysize Bulk Carrier 40,000 DWT",
+  "model_status": "toy_model_with_explicit_assumptions",
+  "decision_date": "2026-10-24",
+  "parameters": {
+    "deadweight_t": {
+      "value": 40000.0,
+      "unit": "t",
+      "provenance": "scenario label from STEP 1; not used directly in the fuel equation"
+    },
+    "speed_through_water_kn": {
+      "value": 12.0,
+      "unit": "kn",
+      "provenance": "model assumption for STEP 2"
+    },
+    "service_power_kw": {
+      "value": 5000.0,
+      "unit": "kW",
+      "provenance": "model assumption for STEP 2; not an identified vessel MCR"
+    },
+    "sfoc_g_per_kwh": {
+      "value": 190.0,
+      "unit": "g/kWh",
+      "provenance": "model assumption for STEP 2"
+    },
+    "fuel_type": {
+      "value": "HFO",
+      "provenance": "model assumption for STEP 2"
+    },
+    "co2_emission_factor_t_per_t_fuel": {
+      "value": 3.114,
+      "unit": "tCO2/t-fuel",
+      "provenance": "provisional model assumption; verify against the cited CF table before reporting"
+    }
+  },
+  "minimum_validity_rules": {
+    "speed_through_water_kn": "> 0",
+    "service_power_kw": ">= 0",
+    "sfoc_g_per_kwh": "> 0",
+    "co2_emission_factor_t_per_t_fuel": "> 0"
+  },
+  "fuel_model": {
+    "formula": "fuel_kg = sum(service_power_kw * sfoc_g_per_kwh * delta_time_h) / 1000",
+    "co2_formula": "co2_t = fuel_t * co2_emission_factor_t_per_t_fuel",
+    "interpretation": "estimated tank-to-wake CO2 for a toy model"
+  },
+  "limitations": [
+    "The parameters do not identify a real vessel.",
+    "Power and SFOC are held constant in the minimum STEP 2 model.",
+    "Weather-to-speed or weather-to-power corrections are not enabled until documented and tested.",
+    "Results must be labelled as model estimates and not operational fuel or emissions figures."
+  ]
+}
